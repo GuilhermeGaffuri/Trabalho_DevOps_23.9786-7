@@ -1,75 +1,89 @@
 pipeline {
     agent any
-
+    
     environment {
-        // Variáveis de ambiente, como nome da imagem Docker
-        DOCKER_IMAGE = 'devopstrabalho:latest'
-        DOCKER_REGISTRY = 'meu-registro.com'
+        // Variáveis de ambiente que podem ser úteis no processo
+        VENV_DIR = 'venv'  // Diretório do ambiente virtual
+        DEPLOY_SERVER = 'your-server.com' // Substitua pelo seu servidor de deploy
+        DEPLOY_PATH = '/var/www/your-app' // Caminho no servidor de deploy
     }
 
     stages {
-        // Etapa 1: Baixar Código do Git
-        stage('Baixar Código do Git') {
+        // Etapa para realizar o checkout do repositório
+        stage('Checkout') {
             steps {
-                // Clonando o repositório Git
-                git 'https://github.com/GuilhermeGaffuri/devOpsTrabalho.git'
+                script {
+                    // Faz o clone do repositório e seleciona a branch correta
+                    git branch: 'main', url: 'https://github.com/GuilhermeGaffuri/devOpsTrabalho.git'
+                }
             }
         }
-
-        // Etapa 2: Rodar Testes
-        stage('Rodar Testes') {
+        
+        // Etapa para instalar as dependências do projeto
+        stage('Install Dependencies') {
             steps {
-                // Rodando testes (personalize conforme o seu projeto)
                 script {
-                    sh 'npm install'  // Se for uma aplicação Node.js, instale dependências
-                    sh 'npm test'     // Execute os testes
+                    // Cria o ambiente virtual Python
+                    sh 'python3 -m venv $VENV_DIR'
+                    // Ativa o ambiente virtual
+                    sh '. $VENV_DIR/bin/activate'
+                    // Instala as dependências do Flask (ou outras dependendo do seu projeto)
+                    sh 'pip install -r flask/requirements.txt'
                 }
             }
         }
 
-        // Etapa 3: Build e Deploy
-        stage('Build e Deploy') {
+        // Etapa para executar os testes do projeto
+        stage('Run Tests') {
             steps {
                 script {
-                    // Construindo a imagem Docker
-                    sh 'docker build -t $DOCKER_IMAGE .'
+                    // Executa os testes (aqui usando pytest, mas adapte conforme necessário)
+                    sh 'source $VENV_DIR/bin/activate && pytest'
+                }
+            }
+        }
 
-                    // Subindo a aplicação (criação do container)
-                    sh 'docker run -d -p 8080:80 $DOCKER_IMAGE'
+        // Etapa de Build (compilação ou preparação do projeto)
+        stage('Build') {
+            steps {
+                script {
+                    // Executa comandos de build necessários, por exemplo:
+                    // Para um projeto Flask:
+                    sh 'source $VENV_DIR/bin/activate && python setup.py install'
+                    // Outro exemplo de build, se for um arquivo compilado:
+                    // sh 'source $VENV_DIR/bin/activate && python manage.py build'
+                }
+            }
+        }
+
+        // Etapa de Deploy
+        stage('Deploy') {
+            steps {
+                script {
+                    // Exemplo de deploy para um servidor remoto utilizando SCP (Secure Copy Protocol)
+                    // Copia os arquivos para o servidor
+                    sh 'scp -r * $DEPLOY_SERVER:$DEPLOY_PATH'
                     
-                    // Aqui você pode adicionar comandos para deploy em ambientes como Kubernetes, AWS, etc.
-                    // Exemplo: 
-                    // sh 'kubectl apply -f deployment.yaml'
-                }
-            }
-        }
-
-        // Etapa 4: Monitoramento
-        stage('Verificar Monitoramento') {
-            steps {
-                script {
-                    // Realizar verificação do monitoramento ou status da aplicação
-                    def response = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/health', returnStdout: true).trim()
-                    if (response != '200') {
-                        error "Aplicação não está respondendo corretamente!"
-                    } else {
-                        echo "Monitoramento OK!"
-                    }
+                    // Exemplo de reiniciar o serviço no servidor (ajuste conforme sua necessidade)
+                    // Neste caso, estamos reiniciando um servidor Flask usando systemctl
+                    sh 'ssh $DEPLOY_SERVER "sudo systemctl restart flask-app"'
                 }
             }
         }
     }
 
     post {
-        // Limpeza e mensagens pós-execução
         always {
-            cleanWs()  // Limpa o workspace após execução
+            // Limpa o workspace após o término do pipeline
+            cleanWs()
         }
         success {
-            echo 'Pipeline executada com sucesso!'
+            // Notifica que o pipeline foi bem-sucedido
+            echo 'Deploy concluído com sucesso!'
         }
         failure {
-            echo 'Pipeline falhou!'
+            // Notifica que algo deu errado no pipeline
+            echo 'Falha no pipeline. Verifique os logs!'
         }
     }
 }
