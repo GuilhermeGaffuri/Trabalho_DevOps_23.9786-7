@@ -11,4 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py /app/
 
 # Aguardar 1 segundo antes de iniciar o Flask
-CMD ["sh", "-c", "sleep 1 && flask run --host=0.0.0.0"]
+CMD ["sh", "-c", "sleep 15 && flask run --host=0.0.0.0"]
