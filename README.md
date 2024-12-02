@@ -1,98 +1,161 @@
-Ao Clonar o Projeto com o comando "git clone" utilizar os seguintes comandos 
-"docker-compose build --no-cache" para iniciar os containers e baixar as imagens e Etc.
 
-![image](https://github.com/user-attachments/assets/7203c570-e090-44e1-83d6-ecf8bd006152)
+# **Monitoramento de Aplicação Flask com Grafana, Prometheus e Jenkins**
 
-e em seguida "Docker-compose up -d" para rodar em segundo Plano.
+Este projeto configura um ambiente monitorado para uma aplicação Flask utilizando ferramentas como Grafana, Prometheus e Jenkins. As instruções abaixo guiam você no processo de configuração, execução e uso das ferramentas integradas.
 
-![Captura de Tela (4)](https://github.com/user-attachments/assets/6d36e9d6-be5d-4a9c-be6b-9b1e9888337b)
+## **Pré-requisitos**
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
-Para ver se os containers estão rodando de maneira correta, utilize o seguinte comando "docker ps" ele listara os containers ativos 
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [Postman](https://www.postman.com/)
+- [Git](https://git-scm.com/)
+- [Jenkins](https://www.jenkins.io/) (opcional para pipelines)
 
-![Capturar](https://github.com/user-attachments/assets/6989cac0-6673-42b5-90e6-1912c10114a9)
+---
 
-As Seguintes aplicaçoes estão rodando:
-App Flask: http://localhost:5000 
-Grafana: http://localhost:3000 
-Maria db: http://localhost:3306
-Prometheus: http://localhost:9090 
+## **Clonando o Projeto**
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/GuilhermeGaffuri/devOpsTrabalho.git
+   cd devOpsTrabalho
+   ```
 
-Ao acessar http://localhost:3000 (Grafana) ira aparecer:
+2. Construa os containers com:
+   ```bash
+   docker-compose build --no-cache
+   ```
 
-![Capturar2](https://github.com/user-attachments/assets/18785de3-d4f1-4775-b399-f5fa5eae66b8)
+3. Inicie os containers em segundo plano:
+   ```bash
+   docker-compose up -d
+   ```
 
-Usuario: admin
-Senha: admin
-Irá Abrir a pagina home:
+4. Verifique se os containers estão ativos:
+   ```bash
+   docker ps
+   ```
+![Capturar](https://github.com/user-attachments/assets/7def12da-a995-498f-817d-75ad63db5d13)
 
-![Capturar22](https://github.com/user-attachments/assets/7640bf72-bd90-4342-8c2b-72e447933d69)
+---
 
-Basta acessar a pagina Dashboard e irá aparecer a seguinte Dashboard
+## **Serviços Disponíveis**
+Após inicializar os containers, os seguintes serviços estarão disponíveis:
 
-![Capturar23](https://github.com/user-attachments/assets/41abe758-d236-4101-b881-a2bb359a240a)
+| Serviço      | URL                           |
+|--------------|-------------------------------|
+| **App Flask** | [http://localhost:5000](http://localhost:5000) |
+| **Grafana**   | [http://localhost:3000](http://localhost:3000) |
+| **MariaDB**   | `http://localhost:3306`       |
+| **Prometheus**| [http://localhost:9090](http://localhost:9090) |
 
-Acessando ela, irá mostrar o monitoramento da nossa aplicação Flask, baseada nos logs existentes
+---
 
-![Capturar24](https://github.com/user-attachments/assets/6c6e0a75-54b6-4833-a14b-eb9bd6a958cb)
-
-Para acessar o Data Source, acesse a barra lateral e escolhar o caminho Connection -> Data Source, e irá mostrar 
-
-![Capturar26](https://github.com/user-attachments/assets/ab2b51bb-917e-43f3-9b0e-95ca0fc8d742)
-![Capturar27](https://github.com/user-attachments/assets/27aa408e-24d5-450d-9230-ca38671cbd71)
-
-Para acessar a Aplicação Flask:
-App Flask: http://localhost:5000 
-Irá aparecer a Seguinte Pagina:
-
-![CapturarF1](https://github.com/user-attachments/assets/5e7c6ebd-08f0-4f5c-a996-6dea197831cd)
-
-Ao aparecer clique no canto superior direito em Login:
-
-![CapturarF2](https://github.com/user-attachments/assets/791491e0-7140-47ec-8b51-b6cd6a63bfe2)
-
-Credenciais 
-user: admin
-password: admin
-![CapturarF3](https://github.com/user-attachments/assets/93683515-4bde-4715-8f0c-9df6a03142fb)
-
-Ao Fazer login, prosseguir para a Pagina:
-http://localhost:5000/alunomodelview/list/
-
-![CapturarF5](https://github.com/user-attachments/assets/14d9344c-2cf9-48dd-be32-adaf2185d077)
-
-Aqui irá listar os alunos cadastrados, para realizar o cadastro existe duas maneiras, a primeira e mais eficiente:
-Pelo postamen: utilizando o Json 
-{
-    "nome": "Teste",
-    "sobrenome": "Teste",
-    "turma": "Teste",
-    "disciplinas": "Teste1, Teste2"
-}
-
-![CapturarF6](https://github.com/user-attachments/assets/1211471c-6a21-4888-bbce-7be556c6427c)
-
-agora basta voltar no http://localhost:5000/alunomodelview/list/
-atualizar a Pagina e:
-
-![CapturarF7](https://github.com/user-attachments/assets/b91a4718-e1ae-4c0c-a19b-de8dcb235f6d)
-
-Aqui esta nosso Aluno!
-
-Para segunda opção temos a Automação da Pipeline com o Jenkins
-Aplicação Jenkinsfile
-
-![Jk](https://github.com/user-attachments/assets/d31af635-f670-4b16-a982-2e4eccadb357)
-
-Para rodar o Jenkins utilizee os comandos abaixo:
-
-Para iniciar o Jenkins.
-"sudo systemctl start jenkins"
-"sudo systemctl enable jenkins"
-
-Para verificar o status do Jenkins:
-"sudo systemctl status jenkins"
-
-Assim, ele ira inicializar o Jenkins
+## **Configuração do Grafana**
+1. Acesse o Grafana: [http://localhost:3000](http://localhost:3000)
+2. Faça login com as credenciais padrão:
+   - Usuário: `admin`
+   - Senha: `admin`
+    ![Capturar22](https://github.com/user-attachments/assets/5eaa1e7b-4eed-4892-874c-6fd2c2989ff7)
 
 
 
+3. Navegue até a página inicial e explore o **Dashboard**, que exibirá os logs da aplicação Flask.
+   ![Capturar24](https://github.com/user-attachments/assets/ae31c05b-3b56-4081-938b-4d245def0d7f)
+
+
+  ![Uploading Capturar22.PNG…]()
+
+### Configuração de Data Source
+1. Vá para: **Configuration > Data Sources**.
+   ![Capturar26](https://github.com/user-attachments/assets/2ddf08fc-b869-4d09-87f5-6d291a77045c)
+3. Data Sources Prometheus configurado.
+
+  ![Capturar27](https://github.com/user-attachments/assets/96a7f3aa-390b-4a70-a7ea-3072ace2a303)
+
+
+---
+
+## **Utilizando a Aplicação Flask**
+1. Acesse a aplicação em: [http://localhost:5000](http://localhost:5000)
+2. Clique em "Login" no canto superior direito.
+
+   ![Login](https://raw.githubusercontent.com/GuilhermeGaffuri/devOpsTrabalho/main/assets/login.png)
+
+3. Credenciais de login:
+   - Usuário: `admin`
+   - Senha: `admin`
+   
+![CapturarF3](https://github.com/user-attachments/assets/b117c745-1cea-476b-bcd2-41344141896f)
+
+### Cadastro de Alunos
+#### Método 1: Interface Web
+1. Após o login, acesse: [http://localhost:5000/alunomodelview/list/](http://localhost:5000/alunomodelview/list/)
+   ![CapturarF1](https://github.com/user-attachments/assets/3b42bb48-0d74-4dcd-8c45-2114fe906a55)
+
+3. Utilize a interface para cadastrar novos alunos.
+
+#### Método 2: Postman
+1. Crie uma requisição POST para: [http://localhost:5000/alunomodelview/](http://localhost:5000/alunomodelview/)
+2. Use o seguinte corpo JSON:
+   ```json
+   {
+       "nome": "Teste",
+       "sobrenome": "Teste",
+       "turma": "Teste",
+       "disciplinas": "Teste1, Teste2"
+   }
+   ```
+   ![CapturarF6](https://github.com/user-attachments/assets/18e3e589-cff4-4334-85ad-0e28e400a84f)
+
+3. Atualize a página para ver o novo aluno listado.
+
+   ![CapturarF7](https://github.com/user-attachments/assets/ad2ee6a7-cc2e-4ef3-bbd4-4a6c9d74935a)
+
+
+---
+
+## **Pipeline de Automação com Jenkins**
+### Configuração do Jenkins
+1. Inicie o Jenkins:
+   ```bash
+   sudo systemctl start jenkins
+   sudo systemctl enable jenkins
+   ```
+
+2. Verifique o status do Jenkins:
+   ```bash
+   sudo systemctl status jenkins
+   ```
+
+3. Configure um pipeline utilizando o arquivo `Jenkinsfile` disponível no repositório.
+
+   ![Jk](https://github.com/user-attachments/assets/2cd31f7d-b082-4981-a7ea-505c42704982)
+
+
+### Fluxo do Pipeline
+O pipeline automatiza a construção e o monitoramento da aplicação, garantindo integração contínua com o ambiente configurado.
+
+---
+
+## **Arquitetura**
+O ambiente é composto pelas seguintes ferramentas e funcionalidades:
+- **Flask**: API e interface para interação com alunos.
+- **Grafana**: Monitoramento de métricas e logs.
+- **Prometheus**: Coleta de métricas.
+- **MariaDB**: Banco de dados para persistência.
+- **Jenkins**: Automação de CI/CD.
+
+---
+
+## **Referências**
+- Documentação oficial:
+  - [Docker](https://docs.docker.com/)
+  - [Grafana](https://grafana.com/docs/)
+  - [Prometheus](https://prometheus.io/docs/)
+  - [Jenkins](https://www.jenkins.io/doc/)
+- Repositório oficial: [https://github.com/GuilhermeGaffuri/devOpsTrabalho](https://github.com/GuilhermeGaffuri/devOpsTrabalho)
+
+---
+
+Esse README foi estruturado para facilitar a leitura e o entendimento de quem for utilizar ou contribuir para o projeto.
