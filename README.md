@@ -76,11 +76,23 @@ atualizar a Pagina e:
 
 ![CapturarF7](https://github.com/user-attachments/assets/b91a4718-e1ae-4c0c-a19b-de8dcb235f6d)
 
-Aqui esta nosso Aluno
+Aqui esta nosso Aluno!
 
+Para segunda opção temos a Automação da Pipeline com o Jenkins
+Aplicação Jenkinsfile
 
+![Jk](https://github.com/user-attachments/assets/d31af635-f670-4b16-a982-2e4eccadb357)
 
+Para rodar o Jenkins utilizee os comandos abaixo:
 
+Para iniciar o Jenkins.
+"sudo systemctl start jenkins"
+"sudo systemctl enable jenkins"
+
+Para verificar o status do Jenkins:
+"sudo systemctl status jenkins"
+
+Assim, ele ira inicializar o Jenkins
 
 
 
