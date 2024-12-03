@@ -13,14 +13,16 @@ services:
     networks:
       - app_network
 
-  mariadb:
+ mariadb:
     image: mariadb:latest
     container_name: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: school_db
+      MYSQL_USER: flask_user          # Added MYSQL_USER to define the user
+      MYSQL_PASSWORD: flask_password  # Added MYSQL_PASSWORD to define the user's password
     ports:
-      - "3306:3306"  # Expondo a porta 3306 do container para a 3306 da máquina host
+      - "3306:3306"  # Exposing MariaDB port
     networks:
       - app_network
 
