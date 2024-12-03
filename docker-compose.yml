@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   flask:
     build:
@@ -13,7 +11,7 @@ services:
     networks:
       - app_network
 
- mariadb:
+  mariadb:
     image: mariadb:latest
     container_name: mariadb
     environment:
@@ -62,3 +60,4 @@ services:
 networks:
   app_network:
     driver: bridge
+
