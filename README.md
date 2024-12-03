@@ -89,7 +89,8 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
 3. Credenciais de login:
    - Usuário: `admin`
    - Senha: `admin`
-   
+   ![image](https://github.com/user-attachments/assets/6fa44ecc-c28b-4559-957f-649ba4747bdb)
+
 ![image](https://github.com/user-attachments/assets/dfd386fe-b5b7-452c-846f-5deb41fb1399)
 
 
