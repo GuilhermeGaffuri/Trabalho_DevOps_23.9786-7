@@ -65,7 +65,8 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
 
 
 3. Navegue até a página inicial e explore o **Dashboard**, que exibirá os logs da aplicação Flask.
-   ![Capturar24](https://github.com/user-attachments/assets/ae31c05b-3b56-4081-938b-4d245def0d7f)
+   ![image](https://github.com/user-attachments/assets/7124e7bc-2f0d-4abf-a90e-89bdea506778)
+
 
 
 
