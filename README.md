@@ -68,7 +68,7 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
    ![Capturar24](https://github.com/user-attachments/assets/ae31c05b-3b56-4081-938b-4d245def0d7f)
 
 
-  ![Uploading Capturar22.PNG…]()
+
 
 ### Configuração de Data Source
 1. Vá para: **Configuration > Data Sources**.
