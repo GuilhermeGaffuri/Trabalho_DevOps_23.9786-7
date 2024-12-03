@@ -130,8 +130,10 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
 
 3. Atualize a página para ver o novo aluno listado.
 
-   ![CapturarF7](https://github.com/user-attachments/assets/ad2ee6a7-cc2e-4ef3-bbd4-4a6c9d74935a)
-   ![image](https://github.com/user-attachments/assets/c4227249-b8b9-480b-873c-950422f24643)
+   ![image](https://github.com/user-attachments/assets/2c5a8cc0-7cf5-481f-b954-4c3c4a214b01)
+
+   ![image](https://github.com/user-attachments/assets/6bb1fb87-8a40-4dfe-9ca0-018b741d958d)
+
 
 #### Método 3: pytest
 1. Dentro da Pasta "Flask" tem um arquivo "test_flask_app.py"
