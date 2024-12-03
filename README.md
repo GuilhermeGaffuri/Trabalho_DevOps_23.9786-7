@@ -108,6 +108,7 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
        "sobrenome": "Teste",
        "turma": "Teste",
        "disciplinas": "Teste1, Teste2"
+       "ra": "1234"
    }
    ```
    ![image](https://github.com/user-attachments/assets/2f170280-ac0b-4736-9c9d-9c990cded10a)
