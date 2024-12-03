@@ -130,12 +130,18 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
 2. Este arquivo se trata de uma automação de Teste Py.
     
    ![image](https://github.com/user-attachments/assets/6a14d0d7-054b-45c4-87c9-ae627ccef30b)
+
+3. está automação realiza um teste de cadastro de usuario, dentro da pasta "Flask" -> "venv" tem o meu ambiene virtual, onde instalei todas as dependencias da automação de teste.
+3. Apos estar dentro da pasta "Flask" inicialize o ambiente virtual com o seguinte comando
    
-3. está automação realiza um teste de cadastro de usuario, e dentro da pasta "Flask" -> "venv" tem o meu ambiene virtual, onde instalei todas as dependencias da automação de teste.
-
-
-
-
+    ```source venv/bin/activate
+   ```
+4. Apos estar com ambiente virtual ativo, utilize o comando "pytest" para inicializar o teste.
+   ```pytest
+   ```
+5. Finalizado o teste, para sair do ambiente basta utilizar o comando.
+   ```deactivate
+   ```
 ---
 
 ## **Pipeline de Automação com Jenkins**
