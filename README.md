@@ -90,7 +90,8 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
    - Usuário: `admin`
    - Senha: `admin`
    
-![CapturarF3](https://github.com/user-attachments/assets/b117c745-1cea-476b-bcd2-41344141896f)
+![image](https://github.com/user-attachments/assets/dfd386fe-b5b7-452c-846f-5deb41fb1399)
+
 
 ### Cadastro de Alunos
 #### Método 1: Interface Web
