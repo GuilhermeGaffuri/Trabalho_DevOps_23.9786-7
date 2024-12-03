@@ -109,7 +109,8 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
    ![CapturarF1](https://github.com/user-attachments/assets/3b42bb48-0d74-4dcd-8c45-2114fe906a55)
 
 3. Utilize a interface para cadastrar novos alunos.
-   ![image](https://github.com/user-attachments/assets/1e763b44-4117-4efb-aa82-d3571e387985)
+   ![image](https://github.com/user-attachments/assets/d4171d5b-39f7-477a-a184-0254aea54654)
+
 
 
 #### Método 2: Postman
