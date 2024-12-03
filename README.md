@@ -24,18 +24,22 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
    git clone https://github.com/GuilhermeGaffuri/Trabalho_DevOps_23.9786-7.git
    cd devOpsTrabalho
    ```
+   Obs: Antes de iniciar os conainers, finalize todos os containers  imagens ja existentes utilizando
+    ```bash
+      docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
+   ```
 
-2. Construa os containers com:
+3. Construa os containers com:
    ```bash
    docker-compose build --no-cache
    ```
 
-3. Inicie os containers em segundo plano:
+4. Inicie os containers em segundo plano:
    ```bash
    docker-compose up -d
    ```
 
-4. Verifique se os containers estão ativos:
+5. Verifique se os containers estão ativos:
    ```bash
    docker ps
    ```
