@@ -142,8 +142,14 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
    ```
 
 3. Configure um pipeline utilizando o arquivo `Jenkinsfile` disponível no repositório.
+      ![Jk](https://github.com/user-attachments/assets/2cd31f7d-b082-4981-a7ea-505c42704982)
+   
+5.  Acesse a aplicação em: [http://localhost:8080](http://localhost:8080)
+6.  Faça login com as credenciais:
+   - Usuário: `admin`
+   - Senha: `4f2af4a5c77f499ab212b6d8ff4d2bb7`
+     ![image](https://github.com/user-attachments/assets/3b4b39cc-cc72-441d-867f-d8bef8e6baf2)
 
-   ![Jk](https://github.com/user-attachments/assets/2cd31f7d-b082-4981-a7ea-505c42704982)
 
 
 ### Fluxo do Pipeline
