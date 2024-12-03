@@ -125,6 +125,15 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
    ![CapturarF7](https://github.com/user-attachments/assets/ad2ee6a7-cc2e-4ef3-bbd4-4a6c9d74935a)
    ![image](https://github.com/user-attachments/assets/c4227249-b8b9-480b-873c-950422f24643)
 
+#### Método 3: pytest
+1. Dentro da Pasta "Flask" tem um arquivo "test_flask_app.py"
+2. Este arquivo se trata de uma automação de Teste Py.
+    
+   ![image](https://github.com/user-attachments/assets/6a14d0d7-054b-45c4-87c9-ae627ccef30b)
+   
+3. está automação realiza um teste de cadastro de usuario, e dentro da pasta "Flask" -> "venv" tem o meu ambiene virtual, onde instalei todas as dependencias da automação de teste.
+
+
 
 
 ---
