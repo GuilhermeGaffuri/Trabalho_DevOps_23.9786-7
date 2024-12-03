@@ -47,6 +47,9 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
 ---
 
+🚨🚨 Minha Aplicação Flask está com atraso de 15seg para subir após tudo inicializar, para n ocorrer erro!🚨🚨
+
+
 ## **Serviços Disponíveis**
 Após inicializar os containers, os seguintes serviços estarão disponíveis:
 
