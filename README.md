@@ -21,7 +21,7 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 ## **Clonando o Projeto**
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/GuilhermeGaffuri/devOpsTrabalho.git
+   git clone https://github.com/GuilhermeGaffuri/Trabalho_DevOps_23.9786-7.git
    cd devOpsTrabalho
    ```
 
