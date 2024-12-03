@@ -84,14 +84,14 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
 1. Acesse a aplicação em: [http://localhost:5000](http://localhost:5000)
 2. Clique em "Login" no canto superior direito.
 
-   ![Login](https://raw.githubusercontent.com/GuilhermeGaffuri/devOpsTrabalho/main/assets/login.png)
+   ![image](https://github.com/user-attachments/assets/dfd386fe-b5b7-452c-846f-5deb41fb1399)
 
 3. Credenciais de login:
    - Usuário: `admin`
    - Senha: `admin`
    ![image](https://github.com/user-attachments/assets/6fa44ecc-c28b-4559-957f-649ba4747bdb)
 
-![image](https://github.com/user-attachments/assets/dfd386fe-b5b7-452c-846f-5deb41fb1399)
+
 
 
 ### Cadastro de Alunos
