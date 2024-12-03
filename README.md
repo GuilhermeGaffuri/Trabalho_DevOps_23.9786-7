@@ -1,5 +1,9 @@
 
 # **Monitoramento de Aplicação Flask com Grafana, Prometheus e Jenkins**
+## **Aluno**
+Nome: Guilherme de Oliveira Gaffuri Hey
+R.A: 23.9786-7
+
 
 Este projeto configura um ambiente monitorado para uma aplicação Flask utilizando ferramentas como Grafana, Prometheus e Jenkins. As instruções abaixo guiam você no processo de configuração, execução e uso das ferramentas integradas.
 
