@@ -110,7 +110,8 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
        "disciplinas": "Teste1, Teste2"
    }
    ```
-   ![CapturarF6](https://github.com/user-attachments/assets/18e3e589-cff4-4334-85ad-0e28e400a84f)
+   ![image](https://github.com/user-attachments/assets/2f170280-ac0b-4736-9c9d-9c990cded10a)
+
 
 3. Atualize a página para ver o novo aluno listado.
 
