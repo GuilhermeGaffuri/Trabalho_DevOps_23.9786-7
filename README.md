@@ -122,6 +122,8 @@ Após inicializar os containers, os seguintes serviços estarão disponíveis:
 3. Atualize a página para ver o novo aluno listado.
 
    ![CapturarF7](https://github.com/user-attachments/assets/ad2ee6a7-cc2e-4ef3-bbd4-4a6c9d74935a)
+   ![image](https://github.com/user-attachments/assets/c4227249-b8b9-480b-873c-950422f24643)
+
 
 
 ---
