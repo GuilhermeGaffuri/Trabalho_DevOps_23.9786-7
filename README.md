@@ -202,7 +202,7 @@ O ambiente é composto pelas seguintes ferramentas e funcionalidades:
   - [Grafana](https://grafana.com/docs/)
   - [Prometheus](https://prometheus.io/docs/)
   - [Jenkins](https://www.jenkins.io/doc/)
-- Repositório oficial: [https://github.com/GuilhermeGaffuri/devOpsTrabalho](https://github.com/GuilhermeGaffuri/devOpsTrabalho)
+- Repositório oficial: [https://github.com/GuilhermeGaffuri/devOpsTrabalho](https://github.com/GuilhermeGaffuri/Trabalho_DevOps_23.9786-7)
 
 ---
 
