@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        REPOSITORY_URL = 'https://github.com/ClaytonRSouza/trabalhoDevpOps-22.9046-8.git'
+        REPOSITORY_URL = 'https://github.com/GuilhermeGaffuri/Trabalho_DevOps_23.9786-7.git'
         BRANCH_NAME = 'main'
     }
 
